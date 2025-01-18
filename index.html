@@ -2,29 +2,33 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>CV Anthony Pereira - Dark Wave Layout</title>
+  <title>Anthony Pereira - Portfolio Expérimental</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link 
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" 
     rel="stylesheet">
-
   <style>
-    /* RESET & BASE */
+    /****************************************
+     ************* 1. RESET & BASE ***********
+     *****************************************/
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth; /* défilement doux */
+    }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #000; 
+      background-color: #000; /* Fond sombre principal */
       color: #fff;
       line-height: 1.5;
     }
     a {
-      color: #53e6c1;
+      color: #53e6c1; 
       text-decoration: underline;
     }
     h1, h2, h3, h4 {
@@ -33,22 +37,22 @@
       letter-spacing: 1px;
     }
 
-    /* EN-TETE AVEC VAGUE */
+    /****************************************
+     ******** 2. HERO / EN-TÊTE VAGUE *******
+     *****************************************/
     header {
       width: 100%;
       position: relative;
       overflow: hidden;
       background: #000;
-      padding: 80px 30px 120px; /* marge interne pour laisser de la place au texte */
+      padding: 80px 30px 120px; /* marge interne pour le contenu du header */
     }
-
-    /* Vague colorée : on utilise un gradient + un masque SVG pour un effet wave */
+    /* Vague colorée via un masque SVG */
     header::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: linear-gradient(130deg, #07b1d0, #53e6c1);
-      /* On applique un masque SVG sur ce dégradé, pour que ça forme une vague */
       mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1440 560" xmlns="http://www.w3.org/2000/svg"><path fill="%23000" d="M0,160L80,181.3C160,203,320,245,480,256C640,267,800,245,960,208C1120,171,1280,117,1360,90.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>');
       mask-size: cover;
       mask-repeat: no-repeat;
@@ -56,17 +60,15 @@
       opacity: 0.7;
       z-index: 1;
     }
-
-
     .header-content {
       position: relative;
-      z-index: 2;
+      z-index: 2; /* passe au-dessus de la vague (header::before) */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
     }
-
     .header-content .photo {
       width: 120px;
       height: 120px;
@@ -80,7 +82,6 @@
       height: auto;
       object-fit: cover;
     }
-
     .header-content h1 {
       font-size: 2rem;
       margin-bottom: 10px;
@@ -91,23 +92,136 @@
       font-weight: 300;
     }
 
-    /* --- SECTION PRINCIPALE (bloc sombre) --- */
+    /****************************************
+     ** 3. SECTION EXPÉRIMENTALE (FORMES) ****
+     *****************************************/
+    .art-section {
+      position: relative;
+      padding: 60px 20px;
+      background: #111; 
+      color: #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+    .art-section h2 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    .art-section p {
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+    /* Conteneur des formes animées */
+    .art-container {
+      position: relative;
+      width: 100%;
+      height: 400px; /* Ajuste la hauteur si besoin */
+    }
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: float 6s ease-in-out infinite alternate;
+    }
+    /* Shapes d'origine */
+    .shape1 {
+      width: 120px;
+      height: 120px;
+      background: #53e6c1;
+      top: 20%;
+      left: 10%;
+    }
+    .shape2 {
+      width: 200px;
+      height: 200px;
+      background: #07b1d0;
+      top: 60%;
+      left: 30%;
+    }
+    .shape3 {
+      width: 150px;
+      height: 150px;
+      background: #9b6cff;
+      top: 40%;
+      left: 70%;
+      animation-duration: 8s;
+    }
+    .shape4 {
+      width: 100px;
+      height: 100px;
+      background: #ffcb2f;
+      top: 75%;
+      left: 85%;
+      animation-duration: 5s;
+    }
+    /* Nouvelles shapes */
+    .shape5 {
+      width: 180px;
+      height: 180px;
+      background: #fa7171;
+      top: 10%;
+      left: 50%;
+      animation-duration: 7s;
+    }
+    .shape6 {
+      width: 80px;
+      height: 80px;
+      background: #71fada;
+      top: 70%;
+      left: 20%;
+      animation-duration: 8s;
+    }
+    .shape7 {
+      width: 120px;
+      height: 120px;
+      background: #fa71c8;
+      top: 15%;
+      left: 80%;
+      animation-duration: 4s;
+    }
+    .shape8 {
+      width: 220px;
+      height: 220px;
+      background: #fad371;
+      top: 80%;
+      left: 60%;
+      animation-duration: 6s;
+    }
+
+    /* Animation "float" en va-et-vient */
+    @keyframes float {
+      0% {
+        transform: translateY(0) translateX(0);
+      }
+      100% {
+        transform: translateY(-30px) translateX(30px) rotate(20deg);
+      }
+    }
+
+    /****************************************
+     ****** 4. CONTENEUR PRINCIPAL (MAIN) ****
+     *****************************************/
     .main {
       width: 90%;
       max-width: 1200px;
       margin: -80px auto 50px; 
       position: relative;
-      background: #111; /* gris très foncé */
+      background: #111; 
       padding: 40px 20px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
       z-index: 10;
     }
-
-    /* TITRES DE SECTIONS */
+    /* Titres de sections internes */
     .section-title {
       font-size: 1.2rem;
       margin-bottom: 10px;
       position: relative;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .section-title::after {
       content: "";
@@ -117,8 +231,7 @@
       background: #07b1d0;
       margin-top: 6px;
     }
-
-    /* DISPOSITION EN COLONNES (inspiré du design de référence) */
+    /* Disposition en colonnes */
     .columns {
       display: flex;
       flex-wrap: wrap; 
@@ -129,8 +242,6 @@
       flex: 1;
       min-width: 280px; 
     }
-
-    /* BLOCS DE TEXTE */
     .section-block {
       margin-bottom: 60px;
     }
@@ -139,7 +250,9 @@
       margin-bottom: 12px;
     }
 
-    /* TIMELINE - Expériences */
+    /****************************************
+     ************** 5. TIMELINE **************
+     *****************************************/
     .timeline {
       display: flex;
       flex-direction: column;
@@ -179,7 +292,9 @@
       line-height: 1.4;
     }
 
-    /* LISTES GÉNÉRIQUES */
+    /****************************************
+     ************** 6. LISTES ***************
+     *****************************************/
     .list {
       list-style: none;
       padding: 0;
@@ -199,7 +314,9 @@
       color: #07b1d0;
     }
 
-    /* LANGUES */
+    /****************************************
+     ************* 7. LANGUES ***************
+     *****************************************/
     .lang-skill {
       margin-bottom: 10px;
       font-size: 0.9rem;
@@ -215,7 +332,9 @@
       color: #ccc;
     }
 
-    /* LOGICIELS */
+    /****************************************
+     ************ 8. LOGICIELS **************
+     *****************************************/
     .software-circles {
       display: flex;
       flex-wrap: wrap;
@@ -236,6 +355,10 @@
       color: #fff;
       padding: 5px;
     }
+
+    /****************************************
+     ************ 9. FOOTER-BLOCK ***********
+     *****************************************/
     .footer-block {
       flex: 1;
       min-width: 180px;
@@ -263,18 +386,13 @@
       text-transform: uppercase;
       font-weight: 600;
     }
-
     .footer-icon a {
-  color: #fff;           /* Couleur blanche pour ces icônes */
-  text-decoration: none; /* On enlève le soulignement si tu le souhaites */
-}
-
-/* (Optionnel) un effet hover si tu veux voir un retour visuel au survol */
-.footer-icon a:hover {
-  text-decoration: underline;
-}
-
-    /* BAS DE PAGE (optionnel) */
+      color: #fff;       
+      text-decoration: none; 
+    }
+    .footer-icon a:hover {
+      text-decoration: underline;
+    }
     .footer-info {
       margin-top: 40px;
       border-top: 1px solid #333;
@@ -284,31 +402,40 @@
       color: #777;
     }
 
-    /* RESPONSIVE */
+    /****************************************
+     ********** 10. MEDIA QUERIES ***********
+     *****************************************/
     @media (max-width: 800px) {
       .main {
         margin: -40px auto 30px;
         padding: 20px;
+      }
+      header {
+        padding: 60px 20px 100px;
+      }
+      .header-content h1 {
+        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- EN-TÊTE AVEC VAGUE -->
+<!-- SECTION HERO : en-tête avec vague -->
 <header>
   <div class="header-content">
     <!-- Photo -->
     <div class="photo">
-      <!-- Remplace l’URL ci-dessous par ta photo si besoin -->
-      <img src="https://raw.githubusercontent.com/TonyCreativeDesign/mon-cv/refs/heads/main/IMG-tony.jpg" alt="Photo Anthony">
+      <!-- Remplace l’URL de l’image par celle de ton choix -->
+      <img src="https://raw.githubusercontent.com/TonyCreativeDesign/mon-cv/refs/heads/main/IMG-tony.jpg" 
+           alt="Photo Anthony">
     </div>
     <h1>Anthony Pereira</h1>
     <h2>Chef de projet digital</h2>
   </div>
 </header>
 
-<!-- SECTION PRINCIPALE -->
+<!-- SECTION PRINCIPALE : Mon CV / Portfolio -->
 <div class="main">
   <div class="columns">
     <!-- COLONNE GAUCHE -->
@@ -317,18 +444,29 @@
       <div class="section-block">
         <h3 class="section-title">À propos de moi</h3>
         <p>
-            Depuis mon enfance, le graphisme et l’expression artistique ont façonné ma vision du monde, nourrissant une passion profonde pour l’esthétique et la création. </p>
+          Depuis mon enfance, le graphisme et l’expression artistique ont façonné ma vision du monde, 
+          nourrissant une passion profonde pour l’esthétique et la création.
+        </p>
         <p>
-            Fort d’une expertise en design digital et d’un savoir-faire polyvalent, je mêle créativité, précision et maîtrise technique pour donner vie à des projets uniques et impactants.        </p>
+          Fort d’une expertise en design digital et d’un savoir-faire polyvalent, je mêle créativité, 
+          précision et maîtrise technique pour donner vie à des projets uniques et impactants.
+        </p>
         <p>
-            Mon expérience en direction artistique et en gestion de projets, associée à mon engagement pour des solutions innovantes et authentiques, me permet de répondre aux défis créatifs avec originalité et rigueur.        </p>
+          Mon expérience en direction artistique et en gestion de projets, associée à mon engagement 
+          pour des solutions innovantes et authentiques, me permet de répondre aux défis créatifs 
+          avec originalité et rigueur.
+        </p>
       </div>
 
       <!-- Passions & centres d’intérêt -->
       <div class="section-block">
         <h3 class="section-title">Passions & centres d’intérêt</h3>
         <p style="font-size: 0.9rem;">
-            Composition musicale et production audio en MAO, montage vidéo, photographie, illustration numériques et dessin traditionnels, découvertes culturelles, veille constante sur les tendances artistiques et technologiques, lecture dédiée à l’art, au design et à l’innovation.        </p>
+          Composition musicale et production audio en MAO, montage vidéo, photographie, 
+          illustration numériques et dessin traditionnels, découvertes culturelles, 
+          veille constante sur les tendances artistiques et technologiques, 
+          lecture dédiée à l’art, au design et à l’innovation.
+        </p>
       </div>
 
       <!-- Mes spécialités -->
@@ -343,14 +481,14 @@
         </ul>
       </div>
 
-      <!-- Autres -->
+      <!-- Autres infos -->
       <div class="section-block">
         <h3 class="section-title">Informations Supplémentaires</h3>
         <ul class="list">
           <li>Notions de base en HTML/CSS</li>
-          <li>Basé à (33) Gironde, ouvert au télétravail.</li>
+          <li>Basé à (33) Gironde, ouvert au télétravail</li>
           <li>RQTH en cours de renouvellement</li>
-          <li>Expérience confirmée en design no-code sur WordPress avec Elementor Pro</li>
+          <li>Expérience confirmée en design no-code sur WordPress (Elementor Pro)</li>
           <li>Polyvalence technique : maîtrise de logiciels créatifs et outils collaboratifs modernes</li>
         </ul>
       </div>
@@ -367,7 +505,8 @@
             <div class="timeline-role">Manager projets digitaux UX Design</div>
             <div class="timeline-company">Graphikly (Alternance)</div>
             <div class="timeline-desc">
-              Mise en place d’approches UX garantissant la cohérence visuelle et l’ergonomie globale, gestion et coordination de projets de conception graphique et web.
+              Mise en place d’approches UX garantissant la cohérence visuelle et l’ergonomie globale, 
+              gestion et coordination de projets de conception graphique et web.
             </div>
           </div>
           <!-- Micro-Entreprise -->
@@ -376,7 +515,8 @@
             <div class="timeline-role">Graphiste / Webdesigner</div>
             <div class="timeline-company">Micro-Entreprise (Auto-entrepreneur)</div>
             <div class="timeline-desc">
-              Création de chartes graphiques, identités visuelles, supports print & digitaux, conception de sites vitrine et e-commerce. Relation et suivi client en autonomie.
+              Création de chartes graphiques, identités visuelles, supports print & digitaux, 
+              conception de sites vitrine et e-commerce. Relation et suivi client en autonomie.
             </div>
           </div>
           <!-- Omega -->
@@ -385,7 +525,9 @@
             <div class="timeline-role">Opérateur Polyvalent / Logistique</div>
             <div class="timeline-company">Omega Systèmes Aquitaine</div>
             <div class="timeline-desc">
-              <p>Assemblage et production (2015-2017).</p> <p>Logistique (2017-2021) : préparation de commandes, contrôle qualité et envoi de pièces aéronautiques et aérospatiales.</p>
+              <p>Assemblage et production (2015-2017).</p>
+              <p>Logistique (2017-2021) : préparation de commandes, contrôle qualité et envoi 
+                 de pièces aéronautiques et aérospatiales.</p>
             </div>
           </div>
           <!-- Vinci -->
@@ -400,7 +542,9 @@
             <div class="timeline-role">Foreur, Sondeur, Terrassier, Maçon</div>
             <div class="timeline-company">TP et Grand Travaux (Intérimaire)</div>
           </div>
-                <!-- Formations -->
+        </div>
+      </div>
+      <!-- Formations -->
       <div class="section-block">
         <h3 class="section-title">Formations</h3>
         <ul class="list">
@@ -410,13 +554,11 @@
           <li>Brevet des collèges - Saint-Genès (2007)</li>
         </ul>
       </div>
-        </div>
-      </div>
     </div>
 
     <!-- COLONNE DROITE -->
     <div class="col">
-      <!-- Informations personnelles -->
+      <!-- Infos persos -->
       <div class="section-block">
         <h3 class="section-title">Informations personnelles</h3>
         <ul class="list">
@@ -425,12 +567,20 @@
           <li>Téléphone : 06 62 72 45 63</li>
           <li>Email : tony_creativedesign@icloud.com</li>
           <li>Adresse : 15 route de Léognan 33140</li>
-          <li>Site personnel : <a href="https://sites.google.com/view/tonycreativedesign" target="_blank">Tony_creativedesign</a></li>
-          <li>Portfolio : <a href="https://341street28a5.myportfolio.com" target="_blank">Voir mes projets</a></li>
+          <li>Site perso : 
+            <a href="https://sites.google.com/view/tonycreativedesign" target="_blank">
+              Tony_creativedesign
+            </a>
+          </li>
+          <li>Portfolio : 
+            <a href="https://341street28a5.myportfolio.com" target="_blank">
+              Voir mes projets
+            </a>
+          </li>
         </ul>
       </div>
 
-      <!-- Logiciels (tous inclus) -->
+      <!-- Logiciels -->
       <div class="section-block">
         <h3 class="section-title">Logiciels</h3>
         <div class="software-circles">
@@ -453,17 +603,16 @@
         </div>
       </div>
 
-      <!-- Références (sites créés) -->
+      <!-- Références -->
       <div class="section-block">
         <h3 class="section-title">Références</h3>
         <p style="font-size: 0.9rem; margin-bottom: 10px;">
-            <p>Références disponibles sur demande.</p>
-            <p>J’ai collaboré avec diverses agences et clients (details sur mon site perso).</p>
+          Références disponibles sur demande. Collaborations avec diverses agences et clients 
+          (plus de détails sur mon site perso).
         </p>
         <p style="font-size: 0.9rem; margin-bottom: 10px;">
-            Voici quelques sites que j’ai réalisés :
-          </p>
-  
+          Voici quelques sites que j’ai réalisés :
+        </p>
         <ul class="list">
           <li><a href="https://graphikly.fr" target="_blank">Graphikly.fr</a></li>
           <li><a href="https://341studio.com" target="_blank">341studio.com</a></li>
@@ -489,26 +638,47 @@
         </div>
       </div>
     </div>
-  </div><!-- Fin des colonnes -->
-
-  <!-- Footer Info (optionnel) -->
+  </div>
+  
+  <!-- Footer Block -->
   <div class="footer-block">
     <h4>Connect</h4>
     <div class="footer-icons">
-        <div class="footer-icon">
-          <a href="https://www.instagram.com/tony_creativedesign/" target="_blank">IG</a>
-        </div>
-        <div class="footer-icon">
-          <a href="https://x.com/341ArtK" target="_blank">X</a>
-        </div>
-        <div class="footer-icon">
-          <a href="https://www.linkedin.com/in/anthony-pereira-4224b225a/" target="_blank">IN</a>
-        </div>
+      <div class="footer-icon">
+        <a href="https://www.instagram.com/tony_creativedesign/" target="_blank">IG</a>
       </div>
+      <div class="footer-icon">
+        <a href="https://x.com/341ArtK" target="_blank">X</a>
+      </div>
+      <div class="footer-icon">
+        <a href="https://www.linkedin.com/in/anthony-pereira-4224b225a/" target="_blank">IN</a>
+      </div>
+    </div>
+
+    <!-- SECTION EXPÉRIMENTALE (FORMES, EFFET CRÉATIF) -->
+    <section class="art-section" id="art-section">
+      <h2>Mon Univers Digital</h2>
+      <p>
+        Bienvenue dans mon espace créatif, cette page reflète mon univers digital. Ici, vous découvrirez l'essence de mon travail en design, développement et gestion de projets digitaux. Plongez dans mes créations et laissez-vous inspirer.
+      </p>
+      <div class="art-container">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <!-- Nouvelles formes -->
+        <div class="shape shape5"></div>
+        <div class="shape shape6"></div>
+        <div class="shape shape7"></div>
+        <div class="shape shape8"></div>
+      </div>
+    </section>
   </div>
+
   <div class="footer-info">
-    © 2024 Anthony Pereira | CV réalisé en HTML/CSS
+    © 2025 Anthony Pereira | CV Expérimental réalisé en HTML/CSS
   </div>
-</div>
+</div><!-- Fin .main -->
+
 </body>
 </html>
