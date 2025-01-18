@@ -191,7 +191,6 @@
       left: 60%;
       animation-duration: 6s;
     }
-
     /* Animation "float" en va-et-vient */
     @keyframes float {
       0% {
@@ -357,7 +356,39 @@
     }
 
     /****************************************
-     ************ 9. FOOTER-BLOCK ***********
+     ************ 9. DASHBOARD - COMPÉTENCES *
+     *****************************************/
+    .dashboard {
+      margin: 40px 0;
+    }
+    .skill-container {
+      margin-top: 20px;
+    }
+    .skill {
+      margin-bottom: 15px;
+    }
+    .skill-label {
+      font-size: 0.9rem;
+      margin-bottom: 5px;
+    }
+    .skill-bar {
+      width: 100%;
+      height: 10px;
+      background: #333;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .skill-level {
+      height: 100%;
+      width: 0;
+      background: #07b1d0;
+      border-radius: 5px;
+      transition: width 1s ease-in-out;
+    }
+    /* Pour illustration, les jauges sont déjà remplies via l'attribut inline style dans le HTML */
+
+    /****************************************
+     ************ 10. FOOTER-BLOCK ***********
      *****************************************/
     .footer-block {
       flex: 1;
@@ -403,7 +434,7 @@
     }
 
     /****************************************
-     ********** 10. MEDIA QUERIES ***********
+     ********** 11. MEDIA QUERIES ***********
      *****************************************/
     @media (max-width: 800px) {
       .main {
@@ -475,26 +506,41 @@
         <ul class="list">
           <li>Gestion de projets digitaux (UX/UI)</li>
           <li>Création d’identité visuelle</li>
-          <li>Charte graphique & webdesign</li>
-          <li>Production de contenus</li>
-          <li>Composition audio, montage vidéo</li>
+          <li>Charte graphique & webdesign (No-code)</li>
+          <li>Design Graphique</li>
+          <li>Composition audio, montage photo</li>
         </ul>
       </div>
 
-      <!-- Autres infos -->
-      <div class="section-block">
-        <h3 class="section-title">Informations Supplémentaires</h3>
-        <ul class="list">
-          <li>Notions de base en HTML/CSS</li>
-          <li>Basé à (33) Gironde, ouvert au télétravail</li>
-          <li>RQTH en cours de renouvellement</li>
-          <li>Expérience confirmée en design no-code sur WordPress (Elementor Pro)</li>
-          <li>Polyvalence technique : maîtrise de logiciels créatifs et outils collaboratifs modernes</li>
-        </ul>
-      </div>
+            <!-- Dashboard : Compétences -->
+            <div class="section-block dashboard">
+                <h3 class="section-title">Compétences</h3>
+                <div class="skill-container">
+                  <div class="skill">
+                    <div class="skill-label">Direction Artistique</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 93%;"></div></div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill-label">UI Design</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 89%;"></div></div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill-label">UX Design</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 75%;"></div></div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill-label">HTML/CSS</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 65%;"></div></div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill-label">Montage Vidéo/Photo</div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 88%;"></div></div>
+                  </div>
+                </div>
+              </div>
     </div>
 
-    <!-- COLONNE CENTRALE (Expériences) -->
+    <!-- COLONNE CENTRALE (Expériences & Formations) -->
     <div class="col">
       <div class="section-block">
         <h3 class="section-title">Expériences</h3>
@@ -552,6 +598,18 @@
           <li>Concepteur Designer UI (Niveau 6) - LaPiscine (2022/2023)</li>
           <li>BAC STI Génie Électrotechnique - Alfred Kastler (2011)</li>
           <li>Brevet des collèges - Saint-Genès (2007)</li>
+        </ul>
+      </div>
+
+      <!-- Autres infos -->
+      <div class="section-block">
+        <h3 class="section-title">Informations Supplémentaires</h3>
+        <ul class="list">
+          <li>Notions de base en HTML/CSS</li>
+          <li>Basé à (33) Gironde, ouvert au télétravail</li>
+          <li>RQTH en cours de renouvellement</li>
+          <li>Expérience confirmée en design no-code sur WordPress (Elementor Pro)</li>
+          <li>Polyvalence technique : maîtrise de logiciels créatifs et outils collaboratifs modernes</li>
         </ul>
       </div>
     </div>
